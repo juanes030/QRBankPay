@@ -8,7 +8,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#2196F3</Color>
-            <Style TargetType="Button">
+
+            <Style x:Key="ButtonPrimary" TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
@@ -26,7 +27,9 @@
                         </VisualStateGroup>
                     </VisualStateGroupList>
                 </Setter>
+                <Setter Property="CornerRadius" Value="30"/>
             </Style>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>
