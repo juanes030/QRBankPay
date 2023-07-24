@@ -10,9 +10,9 @@
 
     <StackLayout Margin="20,0,20,0">
         <Image Source="Logo.png" HeightRequest="200" WidthRequest="200" HorizontalOptions="CenterAndExpand" />
-        <Entry Placeholder="User" HorizontalTextAlignment="Center" Margin="0,40,0,10"/>
-        <Entry Placeholder="Password" IsPassword="True" HorizontalTextAlignment="Center"/>
+        <Entry Placeholder="Document" HorizontalTextAlignment="Center" Margin="0,40,0,10"/>
+        <Entry Placeholder="Password" IsPassword="True" HorizontalTextAlignment="Center" Keyboard="Numeric" MaxLength="4"/>
         <Button Text="Login" Style="{StaticResource ButtonPrimary}" Margin="0,40,0,5"/>
-        <Button Text="Sing Up" />
+        <Button Text="Sing Up" Style="{StaticResource ButtonSecondary}" />
     </StackLayout>
 </ContentPage>
