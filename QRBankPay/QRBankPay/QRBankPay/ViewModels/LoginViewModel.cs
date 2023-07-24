@@ -8,6 +8,71 @@ namespace QRBankPay.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
+        private string _username;
+        private string _password;
+        private bool _showMessage;
+        private string _welcomeMessage;
+        private string _colorTextMessage;
+        public string Username
+        {
+            get => _username;
+            set
+            {
+                if (_username != value)
+                {
+                    _username = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public string Password
+        {
+            get => _password;
+            set
+            {
+                if (_password != value)
+                {
+                    _password = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public bool ShowMessage
+        {
+            get => _showMessage;
+            set
+            {
+                if (_showMessage != value)
+                {
+                    _showMessage = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public string WelcomeMessage
+        {
+            get => _welcomeMessage;
+            set
+            {
+                if (_welcomeMessage != value)
+                {
+                    _welcomeMessage = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        public string ColorTextMessage
+        {
+            get => _colorTextMessage;
+            set
+            {
+                if (_colorTextMessage != value)
+                {
+                    _colorTextMessage = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         public Command LoginCommand { get; }
 
         public LoginViewModel()
@@ -17,8 +82,30 @@ namespace QRBankPay.ViewModels
 
         private async void OnLoginClicked(object obj)
         {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+            if (ValidateFiels())
+            {
+                ColorTextMessage = "#7d44d0";
+                ShowMessage = true;
+                WelcomeMessage = "Welcome";
+            }
+            else
+            {
+                ColorTextMessage = "#d55880";
+                ShowMessage = true;
+                WelcomeMessage = "Invalid User";
+            }
+        }
+
+        private bool ValidateFiels()
+        {
+            if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
+            {
+                return true;
+            }
+            else 
+            { 
+                return false; 
+            }
         }
     }
 }
