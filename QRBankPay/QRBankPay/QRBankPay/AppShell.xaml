@@ -38,7 +38,7 @@
     </TabBar>
     
     <TabBar>
-        <ShellContent Title="About" Icon="icon_about.png" Route="ClientsPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="About" Icon="icon_about.png" Route="ClientsPage" ContentTemplate="{DataTemplate local:ClientsPage}" />
     </TabBar>
     
 </Shell>

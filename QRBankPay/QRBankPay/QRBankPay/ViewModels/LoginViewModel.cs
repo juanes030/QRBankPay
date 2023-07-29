@@ -87,6 +87,8 @@ namespace QRBankPay.ViewModels
                 ColorTextMessage = "#7d44d0";
                 ShowMessage = true;
                 WelcomeMessage = "Welcome";
+
+                await Shell.Current.GoToAsync($"//{nameof(ClientsPage)}");
             }
             else
             {
