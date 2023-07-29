@@ -8,7 +8,7 @@ namespace QRBankPay
         public App()
         {
             InitializeComponent();
-
+            Startup.Initialize();
             MainPage = new AppShell();
         }
 
