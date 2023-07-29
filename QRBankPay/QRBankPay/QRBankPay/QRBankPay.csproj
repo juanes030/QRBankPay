@@ -9,5 +9,37 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.7" />
+    <PackageReference Include="Autofac" Version="7.0.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Refit" Version="7.0.0" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
+    <PackageReference Include="Refit.Newtonsoft.Json" Version="7.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\" />
+    <None Remove="Resources\Images\" />
+    <None Remove="Extensions\" />
+    <None Remove="Services\" />
+    <None Remove="Resources\Images\Logo.png" />
+    <None Remove="Data\" />
+    <None Remove="Data\Models\" />
+    <None Remove="Helpers\" />
+    <None Remove="Helpers\HttpMessageHandlers\" />
+    <None Remove="Data\Api\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Services\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\Models\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Helpers\HttpMessageHandlers\" />
+    <Folder Include="Data\Api\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\Logo.png" />
   </ItemGroup>
 </Project>
