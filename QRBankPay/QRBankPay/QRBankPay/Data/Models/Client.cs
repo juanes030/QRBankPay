@@ -1,5 +1,4 @@
-﻿using System;
-namespace QRBankPay.Data.Models
+﻿namespace QRBankPay.Data.Models
 {
     public class Client
     {

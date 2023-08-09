@@ -1,10 +1,9 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using QRBankPay.Data.API;
 using QRBankPay.Helpers.HttpMessageHandlers;
-using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using QRBankPay;
 using Refit;
 using System;
 using System.Linq;
@@ -12,7 +11,7 @@ using Xamarin.Forms.Internals;
 
 namespace QRBankPay
 {
-    internal class Startup
+    public static class Startup
     {
         private const string INTERFACE_PREFIX = "I";
         private const string SERVICES_NAMESPACE = "QRBankPay.Services";

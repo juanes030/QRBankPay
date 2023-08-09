@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace QRBankPay.Models
+﻿namespace QRBankPay.Models
 {
     public class Item
     {

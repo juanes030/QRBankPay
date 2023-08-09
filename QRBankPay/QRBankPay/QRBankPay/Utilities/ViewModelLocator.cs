@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Reflection;
-using QRBankPay;
 using Xamarin.Forms;
 
 namespace QRBankPay.Utilities

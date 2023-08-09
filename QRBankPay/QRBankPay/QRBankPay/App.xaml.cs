@@ -9,7 +9,7 @@ namespace QRBankPay
         {
             InitializeComponent();
             Startup.Initialize();
-            MainPage = new AppShell();
+            MainPage = Startup.Resolve<AppShell>();
         }
 
         protected override void OnStart()

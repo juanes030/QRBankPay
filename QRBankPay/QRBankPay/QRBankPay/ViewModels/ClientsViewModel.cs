@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using QRBankPay.Data.Models;
+using QRBankPay.Services;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using QRBankPay.Data.Models;
-using QRBankPay.Services;
 using Xamarin.CommunityToolkit.ObjectModel;
 
 namespace QRBankPay.ViewModels
 {
-	public class ClientsViewModel :BaseViewModel
-	{
+    public class ClientsViewModel : BaseViewModel
+    {
         private readonly IClientService _clientService;
 
         public ClientsViewModel(IClientService clientService)
         {
-           _clientService = clientService;
             AppearingCommand = new AsyncCommand(async () => await OnAppearingAsync());
             Title = "Clients";
-
+            _clientService = clientService;
         }
 
         public ObservableRangeCollection<Client> Clients { get; set; } = new ObservableRangeCollection<Client>();
@@ -34,8 +32,8 @@ namespace QRBankPay.ViewModels
             try
             {
                 IsBusy = true;
-                var clients = await _clientService.GetClientsAsync();
-                if (clients.Count > 0)
+                var clients = await _clientService.GetClients();
+                if (clients != null)
                 {
                     Clients.ReplaceRange(clients);
                 }
