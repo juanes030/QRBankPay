@@ -4,9 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:QRBankPay;assembly=QRBankPay"
+             xmlns:utility="clr-namespace:QRBankPay.Utilities"
+             xmlns:resx="clr-namespace:QRBankPay.Resx"
+             utility:ViewModelLocator.AutoWireViewModel="True"
+             x:DataType="viewModels:LoginViewModel"
              mc:Ignorable="d"
              x:Class="QRBankPay.Views.LoginPage"
-             Shell.NavBarIsVisible="True"
+             Shell.NavBarIsVisible="False"
              xmlns:viewModels="clr-namespace:QRBankPay.ViewModels">
     <ContentPage.BindingContext>
         <viewModels:LoginViewModel/>

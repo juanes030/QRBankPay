@@ -1,4 +1,5 @@
-﻿using QRBankPay.Views;
+﻿using QRBankPay.Resx;
+using QRBankPay.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -95,6 +96,7 @@ namespace QRBankPay.ViewModels
                 ColorTextMessage = "#d55880";
                 ShowMessage = true;
                 WelcomeMessage = "Invalid User";
+                await Application.Current.MainPage.DisplayAlert(AppResources.LoginPageInvalidLoginTitle, AppResources.LoginPageInvalidLoginMessage, AppResources.OkText);
             }
         }
 
