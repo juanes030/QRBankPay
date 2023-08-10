@@ -33,12 +33,8 @@
     <Folder Include="Resources\" />
     <Folder Include="Resources\Images\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Services\" />
-    <Folder Include="Data\" />
-    <Folder Include="Data\Models\" />
     <Folder Include="Helpers\" />
     <Folder Include="Helpers\HttpMessageHandlers\" />
-    <Folder Include="Data\Api\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\Logo.png" />

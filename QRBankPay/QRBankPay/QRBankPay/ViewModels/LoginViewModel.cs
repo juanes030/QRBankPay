@@ -1,8 +1,6 @@
 ﻿using QRBankPay.Resx;
+using QRBankPay.Services;
 using QRBankPay.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace QRBankPay.ViewModels
@@ -14,7 +12,7 @@ namespace QRBankPay.ViewModels
         private bool _showMessage;
         private string _welcomeMessage;
         private string _colorTextMessage;
-        public string Username
+        public string UserName
         {
             get => _username;
             set
@@ -76,14 +74,16 @@ namespace QRBankPay.ViewModels
         }
         public Command LoginCommand { get; }
 
-        public LoginViewModel()
+        private readonly IAccountService _accountService;
+        public LoginViewModel(IAccountService accountService)
         {
+            _accountService = accountService;
             LoginCommand = new Command(OnLoginClicked);
         }
 
         private async void OnLoginClicked(object obj)
         {
-            if (ValidateFiels())
+            if (ValidateFiels() && await _accountService.LoginAsync(UserName, Password))
             {
                 ColorTextMessage = "#7d44d0";
                 ShowMessage = true;
@@ -102,13 +102,13 @@ namespace QRBankPay.ViewModels
 
         private bool ValidateFiels()
         {
-            if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
+            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
             {
                 return true;
             }
-            else 
-            { 
-                return false; 
+            else
+            {
+                return false;
             }
         }
     }

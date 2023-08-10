@@ -3,21 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:QRBankPay;assembly=QRBankPay"
+             xmlns:viewModels="clr-namespace:QRBankPay.ViewModels"
              xmlns:utility="clr-namespace:QRBankPay.Utilities"
-             xmlns:resx="clr-namespace:QRBankPay.Resx"
+             xmlns:resx="clr-namespace:QRBankPay.Resx"     
              utility:ViewModelLocator.AutoWireViewModel="True"
              x:DataType="viewModels:LoginViewModel"
+             xmlns:local="clr-namespace:QRBankPay;assembly=QRBankPay"
              mc:Ignorable="d"
              x:Class="QRBankPay.Views.LoginPage"
-             Shell.NavBarIsVisible="False"
-             xmlns:viewModels="clr-namespace:QRBankPay.ViewModels">
-    <ContentPage.BindingContext>
-        <viewModels:LoginViewModel/>
-    </ContentPage.BindingContext>
-    <StackLayout Margin="20,0,20,0">       
+             Shell.NavBarIsVisible="False">
+   <StackLayout Margin="20,0,20,0">       
         <Image Source="{local:ImageResources QRBankPay.Resources.Images.Logo.png}" WidthRequest="200" HeightRequest="200" />
-        <Entry Text="{Binding Username}" Placeholder="Document" HorizontalTextAlignment="Center" Margin="0,40,0,10" FontSize="20"/>
+        <Entry Text="{Binding UserName}" Placeholder="Document" HorizontalTextAlignment="Center" Margin="0,40,0,10" FontSize="20"/>
         <Entry Text="{Binding Password}" Placeholder="Password" IsPassword="True" HorizontalTextAlignment="Center" Keyboard="Numeric" MaxLength="4" FontSize="20"/>
         <Button Command="{Binding LoginCommand}" Text="Login" Style="{StaticResource ButtonPrimary}" Margin="0,40,0,5" FontSize="20"/>
         <Button Text="Sing Up" Style="{StaticResource ButtonSecondary}" FontSize="20"/>

@@ -8,6 +8,7 @@ using Refit;
 using System;
 using System.Linq;
 using Xamarin.Forms.Internals;
+using QRBankPay.Data.Api;
 
 namespace QRBankPay
 {
@@ -34,6 +35,10 @@ namespace QRBankPay
             }));
 
             serviceCollection.AddRefitClient<IClientApi>(refitSettings)
+                .ConfigureHttpClient(c => c.BaseAddress = new Uri(Settings.ApiBaseUri))
+                .AddHttpMessageHandler<BaseAddressHandler>();
+
+            serviceCollection.AddRefitClient<IAccountApi>(refitSettings)
                 .ConfigureHttpClient(c => c.BaseAddress = new Uri(Settings.ApiBaseUri))
                 .AddHttpMessageHandler<BaseAddressHandler>();
 
