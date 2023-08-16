@@ -67,12 +67,18 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <CollectionView ItemsSource="{Binding Clients}"
-                            EmptyView="No Clients to display"                            
-                            ItemTemplate="{StaticResource ClientTemplateSelector}">
-            </CollectionView>
-        </StackLayout>
+        <Grid>
+            <!--Page Content-->
+            <StackLayout IsVisible="{Binding IsNotBusy}" VerticalOptions="FillAndExpand">
+                <CollectionView ItemsSource="{Binding Clients}"
+                        EmptyView="No Clients to display"                 
+                        ItemTemplate="{StaticResource ClientTemplateSelector}"
+                                SelectedItem=""/>
+            </StackLayout>
+            <!--Loading Indicator-->
+            <ActivityIndicator IsRunning="{Binding IsBusy}" VerticalOptions="Center"/>
+        </Grid>
+
     </ContentPage.Content>
 
 </ContentPage>
