@@ -7,15 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.7" />
-    <PackageReference Include="Autofac" Version="7.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2612" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.0" />
+    <PackageReference Include="Autofac" Version="7.1.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Refit" Version="7.0.0" />
     <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
     <PackageReference Include="Refit.Newtonsoft.Json" Version="7.0.0" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2612" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\" />
@@ -30,7 +31,6 @@
     <None Remove="Data\Api\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="Resources\Images\" />
     <Folder Include="Extensions\" />
     <Folder Include="Helpers\" />
@@ -47,9 +47,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Update="Resources\Styles\Styles.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resx\AppResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ClientPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

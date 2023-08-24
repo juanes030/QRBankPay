@@ -1,7 +1,5 @@
-﻿using QRBankPay.ViewModels;
-using QRBankPay.Views;
+﻿using QRBankPay.Views;
 using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace QRBankPay
@@ -11,7 +9,11 @@ namespace QRBankPay
         public AppShell()
         {
             InitializeComponent();
+            Routing.RegisterRoute(nameof(ClientPage), typeof(ClientPage));
         }
-
+        private async void OnMenuItemClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//LoginPage");
+        }
     }
 }

@@ -1,9 +1,11 @@
 ﻿using QRBankPay.Data.Models;
 using QRBankPay.Services;
+using QRBankPay.Views;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.CommunityToolkit.ObjectModel;
+using Xamarin.Forms;
 
 namespace QRBankPay.ViewModels
 {
@@ -14,6 +16,7 @@ namespace QRBankPay.ViewModels
         public ClientsViewModel(IClientService clientService)
         {
             AppearingCommand = new AsyncCommand(async () => await OnAppearingAsync());
+            ClientTappedCommand = new AsyncCommand<Client>(OnClientTapped);
             Title = "Clients";
             _clientService = clientService;
         }
@@ -21,6 +24,7 @@ namespace QRBankPay.ViewModels
         public ObservableRangeCollection<Client> Clients { get; set; } = new ObservableRangeCollection<Client>();
 
         public ICommand AppearingCommand { get; set; }
+        public ICommand ClientTappedCommand { get; set; }
 
         private async Task OnAppearingAsync()
         {
@@ -48,7 +52,14 @@ namespace QRBankPay.ViewModels
             }
         }
 
+        private Task OnClientTapped(Client client)
+        {
+            if (client == null)
+            {
+                return Task.CompletedTask;
+            }
 
+            return Shell.Current.GoToAsync($"{nameof(ClientPage)}?{nameof(ClientViewModel.ClientId)}={client.Id}");
+        }
     }
 }
-
